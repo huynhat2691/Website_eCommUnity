@@ -22,13 +22,30 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://website-e-comm-unity-server.vercel.app",
-      "*",
+      "capacitor://localhost",
+      "http://localhost",
+      "http://192.168.1.4:5173",
+      "http://26.39.188.74:5173",
+      "http://192.168.64.1:5173",
+      "http://192.168.226.1:5173",
+      "http://192.168.1.4:5000",
+      "https://ecommunity-frontend.loca.lt",
+      "https://android-e-comm-unity-client.vercel.app"
     ],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Thêm OPTIONS
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin",
+    ],
+    exposedHeaders: ["Content-Range", "X-Content-Range"],
+    optionsSuccessStatus: 200,
   })
 );
+
 
 app.use("/test", (req, res) => {
   res.send("Hello world!");
