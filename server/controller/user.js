@@ -154,6 +154,10 @@ router.get(
       res.cookie("token", null, {
         expires: new Date(Date.now()),
         httpOnly: true,
+        sameSite: "none", // Thay đổi từ strict sang none
+        secure: true,
+        path: "/",
+        domain: "website-e-comm-unity-server.vercel.app"
       });
       res.status(201).json({
         success: true,
