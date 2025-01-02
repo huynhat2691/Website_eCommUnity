@@ -6,6 +6,8 @@ const sendShopToken = (seller, statusCode, res) => {
       httpOnly: true,
       sameSite: "none",
       secure: true,
+      path: "/",
+      domain: "website-e-comm-unity-server.vercel.app",
     };
 
     res.status(statusCode).cookie("seller_token", token, options).json({
