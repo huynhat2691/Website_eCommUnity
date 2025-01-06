@@ -328,9 +328,9 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: _id
-          ? "Địa chỉ đã được cập nhật thành công"
-          : "Địa chỉ đã được thêm thành công",
+        // message: _id
+        //   ? "Địa chỉ đã được cập nhật thành công"
+        //   : "Địa chỉ đã được thêm thành công",
         user,
       });
     } catch (error) {
